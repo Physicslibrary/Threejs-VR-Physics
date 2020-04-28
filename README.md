@@ -1,4 +1,4 @@
-# Threejs-VR-Physics (under construction)
+# Threejs-VR-Physics
 
 Explore computational physics in Threejs VR
 
@@ -6,13 +6,13 @@ Explore computational physics in Threejs VR
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/](https://physicslibrary.github.io/Threejs-VR-Physics/)
 
-## System requirements
+## System Requirements
 
 Oculus Quest recommended (6DoF headset/controllers).<br>
 
 Oculus Browser (tested Quest Update >16.0).<br>
 
-## Mass on a spring.
+## Mass on a Spring.
 
 <img src="images/1.png" width="480">
 
