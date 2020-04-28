@@ -2,6 +2,10 @@
 
 Explore computational physics in Threejs VR
 
+## Threejs-VR-Physics Pages
+
+[https://physicslibrary.github.io/Threejs-VR-Physics/](https://physicslibrary.github.io/Threejs-VR-Physics/)
+
 ## System requirements
 
 Oculus Quest recommended (6DoF headset/controllers).<br>
@@ -55,7 +59,9 @@ var dt = 0.05;  // time step
 
 </pre>
 
-In Oculus Quest, open Oculus Browser and go to link:<br>
+With an Oculus Quest, open Oculus Browser and go to link:<br>
+
+[https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html)
 
 ## References
 
