@@ -1,0 +1,172 @@
+<!--
+
+threejs_vr_mass_on_a_spring.html
+
+https://github.com/Physicslibrary/Threejs-VR-Physics
+
+MIT License
+
+Copyright (c) 2020 Hartwell Fong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+April 2020.
+
+Explore the physics of mass on a spring in Threejs VR.
+
+System requirements
+Oculus Quest recommended (6DoF headset/controllers).
+Oculus Browser (tested Quest Update >16.0).
+
+References
+
+Pieter B. Visscher, Fields and Electrodynamics, John Wiley & Sons (1988).
+
+Harvey Gould and Jan Tobochnik, An Introduction to Computer Simulation Methods, Addison-Wesley (1996).
+
+https://threejs.org/
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>three.js Mass on a Spring</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>		
+	</head>
+	<body>
+
+	<script type="module">
+
+import * as THREE from '../build/three.module.js';
+import { BoxLineGeometry } from './jsm/geometries/BoxLineGeometry.js';
+import { VRButton } from './jsm/webxr/VRButton.js';
+
+var camera, scene, renderer;
+var controller, controller1;
+var room, geometry, green, green1, mass_geometry;
+
+var k = 0.2; // spring constant
+var mass = 2;
+
+var xnew, xold, vnew, vold;
+xold = 0.5;
+vold = 0;
+var dt = 0.05;
+
+var arrow;
+var dir;
+var origin;
+var length;
+var hex;
+
+var force_on_mass;
+
+init();
+animate();
+
+function init() {
+				
+	scene = new THREE.Scene();
+	scene.background = new THREE.Color(0x505050);
+
+	camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.1, 10);
+
+	room = new THREE.LineSegments(
+		new BoxLineGeometry(1, 1, 1, 10, 10, 10),
+		new THREE.LineBasicMaterial({color: 0x808080})
+ 		);
+	room.geometry.translate(0,1,-0.5);
+	scene.add(room);
+
+	renderer = new THREE.WebGLRenderer({antialias: true});
+	renderer.setPixelRatio(window.devicePixelRatio );
+	renderer.setSize(window.innerWidth, window.innerHeight);	
+	document.body.appendChild(renderer.domElement);
+	document.body.appendChild(VRButton.createButton(renderer));
+	renderer.xr.enabled = true;
+
+	controller = renderer.xr.getController(0); // controller = right hand
+	scene.add(controller);
+
+	controller1 = renderer.xr.getController(1); // controller1 = left hand
+	scene.add(controller1);
+
+	geometry = new THREE.BoxBufferGeometry(0.05,0.05,0.05);
+
+	green = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({color: 0x00ff00}));
+	green.material.wireframe = true;
+
+	green1 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({color: 0x00ff00}));
+	green1.material.wireframe = true;
+
+	mass_geometry = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({color: 0x00ff00}));
+	mass_geometry.material.wireframe = true;
+	mass_geometry.position.z = -0.5;
+
+	mass_geometry.position.x = xold;
+
+	controller.add(green);
+	controller1.add(green1);
+	scene.add(mass_geometry);
+
+	force_on_mass = new THREE.Object3D();
+	mass_geometry.add(force_on_mass);
+
+	dir = new THREE.Vector3(1,0,0);
+	dir.normalize();
+	origin = new THREE.Vector3(0,0,0);
+	length = 2; 				// be visible
+	hex = 0x00ff00; 			// make force vector green
+	arrow = new THREE.ArrowHelper(dir,origin,length,hex);
+	force_on_mass.add(arrow);
+
+	}
+
+function animate() {
+
+	renderer.setAnimationLoop( render );
+
+		}
+
+function render() {
+
+	renderer.render(scene, camera);
+
+		vnew = vold + 1/mass*(-k*xold)*dt;
+		xnew = xold + vnew*dt;
+		mass_geometry.position.x = xnew;
+		mass_geometry.position.y = 1;
+		xold = xnew;
+		vold = vnew;
+
+		force_on_mass.scale.x = -k*xold; // F = -kx
+		force_on_mass.scale.y = Math.abs(-k*xold);
+		force_on_mass.scale.z = Math.abs(-k*xold);			
+
+	}
+
+</script>
+</body>
+</html>
