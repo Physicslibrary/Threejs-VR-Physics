@@ -59,9 +59,15 @@ var dt = 0.05;  // time step
 
 </pre>
 
-With an Oculus Quest, open Oculus Browser and go to link:<br>
+With an Oculus Quest, open Oculus Browser and go to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html)
+
+Webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js can be downloaded from threejs website.
+
+Tutorial on how to make Threejs-VR-Physics on a Raspberry Pi is the same as "Making Threejs-WebXR-67P (experimental Feb 10, 2020)":
+
+[https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
 
 ## References
 
