@@ -151,9 +151,9 @@ With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 In animated gif above, right controller in a box (or Yee cell) adds positive charges. The charges in the box next to it become more negatively charged (charge conservation). Add positive charges to that box to reverse polarity. Move charges back and forth to make an oscillating dipole antenna.
 
-Controller above Yee cells is jx = 0 stops current flow.
+Right controller above Yee cells is jx = 0 to stop separating charges.
 
-Controller near floor (0.2m) resets simulation.
+Right controller near floor (0.2m) resets simulation.
 
 To exit simulation, press left Touch controller menu button.
 
