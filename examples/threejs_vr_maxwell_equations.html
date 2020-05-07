@@ -349,7 +349,7 @@ function render() {
 if(wait > 4) {
 
 // compute time-dependent Maxwell equations
-// compute numbers inside the NxNxN grid, outermost grid are missing neighbouring values
+// compute numbers inside the N x N x N grid, outermost grid are missing neighbouring values
 
 // Compute new E field
 
@@ -389,9 +389,9 @@ if(wait > 4) {
 	}
 	}
 
-// Yee cells for right controller to change jx direction to add positive charges
-// controller above Yee cells, make jx = 0 to stop separating charges
-// controller near floor (0.2m) to reset simulation
+// right controller in a Yee cell adds positive charges
+// right controller above Yee cells is jx = 0 to stop separating charges
+// right controller near floor (0.2m) resets simulation
 
 var check1 = (controller.position.x > -0.1 && controller.position.x < 0.1);
 var check2 = (controller.position.y > 0.9 && controller.position.y < 1.1);
@@ -423,7 +423,7 @@ if(check6){
 
 // Conservation of charges
 // rho charge density inside a Yee cell
-// disable updating rho for NxNxN cells, for now
+// disable updating rho for N x N x N cells, for now
 
 //	for(i=0;i<N-1;i++){
 //	for(j=0;j<N-1;j++){
@@ -435,7 +435,7 @@ if(check6){
 //	}
 //	}
 
-// instead use two adjacent cells to observe physics of E from curl of B
+// to keep visualization simple, use two adjacent cells to observe physics of E from curl of B
 // B from curl of E, d(rho)/dt from divergence of j
 
 rho[N/2][N/2][N/2] = rho[N/2][N/2][N/2]+jx[N/2][N/2][N/2];
