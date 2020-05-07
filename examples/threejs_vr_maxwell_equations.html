@@ -71,7 +71,7 @@ var controller_box2;
 
 var i,j,k;
 
-var N = 16;		      // size of grid to compute E, B, j, and rho
+var N = 16;		    // size of grid to compute E, B, j, and rho
 
 var jx = [];		    // current density
 var jy = [];
@@ -87,14 +87,14 @@ var Bz = [];
 
 var rho = [];		    // charge density
 
-var curl_B = 0.0;   // variable to hold the curl of B
+var curl_B = 0.0;   	    // variable to hold the curl of B
 
-var curl_E = 0.0;   // variable to hold the curl of E
+var curl_E = 0.0;   	    // variable to hold the curl of E
 
-let dt = 0.5;       // time step (nanosecond,ns) 0.1
+let dt = 0.5;       	    // time step (nanosecond,ns) 0.1
 let dx = 1.0;		    // space step (meter,m)
-let c1 = 0.09;		  // speed of light squared m^2/(ns)^2
-let c2 = 0.11;		  // 1/(permittivity of space) Nm^2/(uc^2) where N=Newton, uc=microcoulomb
+let c1 = 0.09;		    // speed of light squared m^2/(ns)^2
+let c2 = 0.11;		    // 1/(permittivity of space) Nm^2/(uc^2) where N=Newton, uc=microcoulomb
 
 var Exfield = [];
 var Byfield = [];
@@ -102,7 +102,7 @@ var By2field = [];
 var Bzfield = [];
 var Bz2field = [];
 
-var resetEBj = 0;		// iterate 2000 loops, then reset (no absorbing boundary yet)
+var resetEBj = 0;	    // iterate 2000 loops, then reset (no absorbing boundary yet)
 
 var positive, negative;
 
@@ -171,7 +171,7 @@ for(i=0;i<N;i++){
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color(0x505050);
 
-	camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.5, 100);
+	camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.1, 100);
 
 	renderer = new THREE.WebGLRenderer({antialias: true});
 	renderer.setPixelRatio(window.devicePixelRatio );
