@@ -10,7 +10,7 @@ Explore computational physics in Threejs VR
 
 Oculus Quest recommended (6DoF headset/controllers).<br>
 
-Oculus Browser (tested Quest Update >16.0).<br>
+Oculus Browser (tested Quest Update >16.0 and three.js r115).<br>
 
 ## 1. Mass on a Spring.
 
@@ -50,7 +50,7 @@ xnew = xold + vnew * dt                (1,6)
 Put 1.5 and 1.6 into javascript with initial conditions:
 
 var k = 0.2;    // spring constant
-var mass = 2;
+var m = 2;      // mass
 
 var xnew, xold, vnew, vold;
 xold = 0.5;
@@ -63,15 +63,16 @@ With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html)
 
-Webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js can be downloaded from threejs website.
+Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js can be downloaded from threejs website.
 
-Tutorial on how to make Threejs-VR-Physics on a Raspberry Pi is the same as "Making Threejs-WebXR-67P (experimental Feb 10, 2020)":
+Code webxr_vr_mass_on_a_spring.html is developed on a Raspberry Pi 3 Model B+ and tested on Oculus Quest. There is a short tutorial on how to write three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P (experimental Feb 10, 2020)":
 
 [https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
 
 ## 2. Maxwell Equations. (under construction)
 
-James Clerk Maxwell unified electricity and magnetism in the 19th century. 150 years later, the equations can be interactively computed in a web browser.
+James Clerk Maxwell unified electricity and magnetism in the 19th century. 150 years later,
+the equations can be interactively computed in a web browser.
 
 <pre>
 
@@ -93,18 +94,60 @@ d(rho)/dt = - div j                     (2.3)
 
 where rho = charge density
 
+3D vector fields E, B, j, and rho are approximated to finite-difference time-domain (FDTD)
+variables in javascript. For example, electric vector field E has three components: Ex, Ey, and Ez.
+A component Ex is indexed (i,j,k) to define its discrete positions in cartesian space.
+
+// Compute new E field
+
+  for (i = 0; i < N-1; i++) {
+  for (j = 0; j < N-1; j++) {
+  for (k = 0; k < N-1; k++) {
+
+  curl_B = By[i][j][k] - By[i][j][k+1] + Bz[i][j+1][k] - Bz[i][j][k];
+  Ex[i][j][k] = Ex[i][j][k] + dt * (c1 * c1 * curl_B - c2 * jx[i][j][k]);     // ~ Ampere's Law
+
+  curl_B = -Bx[i][j][k] + Bx[i][j][k+1] + Bz[i][j][k] - Bz[i+1][j][k];
+  Ey[i][j][k] = Ey[i][j][k] + dt * (c1 * c1 * curl_B - c2 * jy[i][j]\[k]);
+
+  curl_B = Bx[i][j][k] - Bx[i][j+1][k] - By[i][j][k] + By[i+1][j][k];
+  Ez[i][j][k] = Ez[i][j][k] + dt * (c1 * c1 * curl_B - c2 * jz[i][j][k]);
+
+  }
+  }
+  }
+
+// Compute new B field
+
+for (i = 1; i < N; i++) {
+for (j = 1; j < N; j++) {
+for (k = 1; k < N; k++) {
+
+curl_E = Ey[i][j][k-1] - Ey[i][j][k] + Ez[i][j][k] - Ez[i][j-1][k];
+Bx[i][j][k] = Bx[i][j][k] - curl_E * dt;                                      // ~ Faraday's Law
+
+curl_E = Ex[i][j][k] - Ex[i][j][k-1] - Ez[i][j][k] + Ez[i-1][j][k];
+By[i][j][k] = By[i][j][k] - curl_E * dt;
+
+curl_E = -Ex[i][j][k] + Ex[i][j-1][k] + Ey[i][j][k] - Ey[i-1][j][k];
+Bz[i][j][k] = Bz[i][j][k] - curl_E * dt;
+
+}
+}
+}
+
 </pre>
 
 With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
-There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of a
-finite N x N computational space, they will bounce back (energy conservation). Code resets E, B, j, and rho to zero after it loops 1500 times computing the four fields.
+There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of the
+finite 16x16x16 computational space, they will reflect (energy conservation). Code resets E, B, j, and rho to zero after computing the four fields 2000 times. This is a balance between the refresh rate of Oculus Quest and the amount of floating points the browser computes between frames.
 
 ## References
 
 Pieter B. Visscher, Fields and Electrodynamics, John Wiley & Sons (1988).
 
-
+P.B. Visscher, "Discrete formulation of Maxwell equations", Computers In Physics. 3 (2), 42 (1989).
 
 Harvey Gould and Jan Tobochnik, An Introduction to Computer Simulation Methods, Addison-Wesley (1996).
 
