@@ -67,7 +67,7 @@ All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and t
 
 [https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
 
-## 2. Maxwell Equations. (under construction)
+## 2. Maxwell Equations.
 
 <img src="images/maxwell1.gif" width="320">
 
