@@ -61,7 +61,7 @@ With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 To exit simulation, press left Touch controller menu button.
 
-Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js can be downloaded from threejs website.
+Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js is available from threejs website.
 
 All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and tested on Oculus Quest. There is a short tutorial on writing three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P":
 
