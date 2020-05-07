@@ -57,7 +57,7 @@ var dt = 0.05;  // time step
 
 With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
-[https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html)
+[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_mass_on_a_spring.html)
 
 To exit simulation, press left Touch controller menu button.
 
