@@ -33,7 +33,7 @@ dv/dt = -k * x / m    (aceleration = dv/dt, change in velocity with time) (1.3)
 v = dx/dt             (velocity = dx/dt, change in distance with time) (1.4)
 
 Equations 1.3 and 1.4 are usually solved using calculus. Since a web browser can multiply and add
-floating points very fast, make 3 and 4 finite-difference equations:
+floating points very fast, make 1.3 and 1.4 finite-difference equations:
 
 (vnew - vold)/dt = -k * xold / m       (1.3)
 
@@ -59,9 +59,11 @@ With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/webxr_vr_mass_on_a_spring.html)
 
+To exit simulation, press left Touch controller menu button.
+
 Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js can be downloaded from threejs website.
 
-Code webxr_vr_mass_on_a_spring.html is developed on a Raspberry Pi 3 Model B+ and tested on Oculus Quest. There is a short tutorial on how to write three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P (experimental Feb 10, 2020)":
+Code webxr_vr_mass_on_a_spring.html is developed on a Raspberry Pi 3 Model B+ and tested on Oculus Quest. There is a short tutorial on how to write three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P":
 
 [https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
 
@@ -97,9 +99,9 @@ where rho = charge density
 
 150 years later, the equations can be interactively computed in a web browser.
 
-3D vector fields E, B, j, and rho are approximated to finite-difference time-domain (FDTD)
+3D vector fields E, B, j, and rho are approximated to finite-difference time-domain
 variables in javascript. For example, electric vector field E has three components Ex, Ey, and Ez.
-A component Ex is indexed (i,j,k) to define its discrete positions in cartesian space.
+Component Ex is indexed (i,j,k) to define its discrete positions in cartesian space.
 
 <pre>
 
@@ -146,6 +148,14 @@ Bz[i][j][k] = Bz[i][j][k] - curl_E * dt;
 With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_maxwell_equations.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_maxwell_equations.html)
+
+In animated gif above, right controller in a box (or Yee cell) adds positive charges. The charges in the box next to it become more negatively charged (charge conservation). Try adding positive charges that box to reverse polarity. Or move charges back and forth to make an oscillating dipole antenna.
+
+Controller above Yee cells is jx = 0 stops current flow.
+
+Controller near floor (0.2m) resets simulation.
+
+To exit simulation, press left Touch controller menu button.
 
 There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of the
 finite 16x16x16 computational space, they will reflect (energy conservation). Code resets E, B, j, and rho to zero after computing the four fields 2000 times. This is a balance between the refresh rate of Oculus Quest and the amount of floating points the browser computes between frames.
