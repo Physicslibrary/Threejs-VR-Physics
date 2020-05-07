@@ -149,6 +149,8 @@ Bz[i][j][k] = Bz[i][j][k] - curl_E * dt;
 
 With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
+[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_maxwell_equations.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_maxwell_equations.html)
+
 There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of the
 finite 16x16x16 computational space, they will reflect (energy conservation). Code resets E, B, j, and rho to zero after computing the four fields 2000 times. This is a balance between the refresh rate of Oculus Quest and the amount of floating points the browser computes between frames.
 
