@@ -63,7 +63,7 @@ To exit simulation, press left Touch controller menu button.
 
 Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js can be downloaded from threejs website.
 
-Code webxr_vr_mass_on_a_spring.html is developed on a Raspberry Pi 3 Model B+ and tested on Oculus Quest. There is a short tutorial on how to write three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P":
+All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and tested on Oculus Quest. There is a short tutorial on writing three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P":
 
 [https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
 
@@ -149,7 +149,7 @@ With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_maxwell_equations.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_maxwell_equations.html)
 
-In animated gif above, right controller in a box (or Yee cell) adds positive charges. The charges in the box next to it become more negatively charged (charge conservation). Try adding positive charges that box to reverse polarity. Or move charges back and forth to make an oscillating dipole antenna.
+In animated gif above, right controller in a box (or Yee cell) adds positive charges. The charges in the box next to it become more negatively charged (charge conservation). Add positive charges to that box to reverse polarity. Move charges back and forth to make an oscillating dipole antenna.
 
 Controller above Yee cells is jx = 0 stops current flow.
 
