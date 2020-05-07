@@ -1,8 +1,4 @@
-# Threejs-VR-Physics
-
-Explore computational physics in Threejs VR
-
-## Threejs-VR-Physics Pages
+# Threejs-VR-Physics Pages
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/](https://physicslibrary.github.io/Threejs-VR-Physics/)
 
