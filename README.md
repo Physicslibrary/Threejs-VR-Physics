@@ -75,8 +75,7 @@ Code webxr_vr_mass_on_a_spring.html is developed on a Raspberry Pi 3 Model B+ an
 
 Green lines are electric field Ex, blue lines are magnetic fields By and Bz, red square is positive charge, and green square is negative charge. The yellow box is two visible Yee cells (total 16x16x16 or 4096 cells).
 
-James Clerk Maxwell unified electricity and magnetism in the 19th century. 150 years later,
-the equations can be interactively computed in a web browser.
+James Clerk Maxwell unified electricity and magnetism in the 19th century.
 
 <pre>
 
@@ -98,9 +97,15 @@ d(rho)/dt = - div j                     (2.3)
 
 where rho = charge density
 
+</pre>
+
+150 years later, the equations can be interactively computed in a web browser.
+
 3D vector fields E, B, j, and rho are approximated to finite-difference time-domain (FDTD)
-variables in javascript. For example, electric vector field E has three components: Ex, Ey, and Ez.
+variables in javascript. For example, electric vector field E has three components Ex, Ey, and Ez.
 A component Ex is indexed (i,j,k) to define its discrete positions in cartesian space.
+
+<pre>
 
 // Compute new E field
 
