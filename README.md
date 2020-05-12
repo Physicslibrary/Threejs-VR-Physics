@@ -10,7 +10,7 @@ Oculus Browser (tested Quest Update >16.0 and three.js r115).<br>
 
 ## 1. Mass on a Spring.
 
-<img src="images/1.png" width="512">
+<img src="images/1.png" width="480">
 
 The two green wireframe boxes on the lower right are Touch controllers. For "Mass on a spring",
 they do not do anything except to help see hands in VR. The green box on the left is the mass
