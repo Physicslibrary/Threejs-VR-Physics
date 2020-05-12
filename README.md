@@ -10,7 +10,7 @@ Oculus Browser (tested Quest Update >16.0 and three.js r115).<br>
 
 ## 1. Mass on a Spring.
 
-<img src="images/1.png" width="320">
+<img src="images/1.png" width="512">
 
 The two green wireframe boxes on the lower right are Touch controllers. For "Mass on a spring",
 they do not do anything except to help see hands in VR. The green box on the left is the mass
@@ -69,7 +69,7 @@ All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and t
 
 ## 2. Maxwell Equations.
 
-<img src="images/maxwell1.gif" width="320">
+<img src="images/maxwell1.gif" width="512">
 
 Green lines are electric field Ex, blue lines are magnetic fields By and Bz, red square is positive charge, and green square is negative charge. The yellow box is two visible Yee cells (total 16x16x16 or 4096 cells).
 
