@@ -99,7 +99,7 @@ where rho = charge density
 
 150 years later, the equations can be interactively computed in a web browser.
 
-3D vector fields E, B, j, and scalar rho are approximated to finite-difference time-domain
+Vector fields E, B, j, and scalar rho are approximated to finite-difference time-domain
 variables in javascript. For example, electric vector field E has three components Ex, Ey, and Ez.
 Component Ex is indexed (i,j,k) to define its discrete positions in cartesian space.
 
