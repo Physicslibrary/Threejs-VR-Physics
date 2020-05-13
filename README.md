@@ -71,7 +71,7 @@ All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and t
 
 <img src="images/maxwell1.gif" width="320">
 
-Green lines are electric field Ex, blue lines are magnetic fields By and Bz, red square is positive charge, and green square is negative charge. The yellow box is two visible Yee cells (total 16x16x16 or 4096 cells).
+Green lines are electric field Ex, blue lines are magnetic fields By and Bz, red square is positive charge, and green square is negative charge. The yellow box is two visible Yee cells (2 of 16x16x16 or 4096 cells).
 
 James Clerk Maxwell unified electricity and magnetism in the 19th century.
 
