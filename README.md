@@ -112,13 +112,13 @@ Component Ex is indexed (i,j,k) to define its discrete positions in cartesian sp
   for (k = 0; k < N-1; k++) {
 
   curl_B = By[i][j][k] - By[i][j][k+1] + Bz[i][j+1][k] - Bz[i][j][k];
-  Ex[i][j][k] = Ex[i][j][k] + dt * (c1 * c1 * curl_B - c2 * jx[i][j][k]);     // ~ Ampere's Law
+  Ex[i][j][k] = Ex[i][j][k] + dt * (c1 * c1 * curl_B / dr - c2 * jx[i][j][k]);     // ~ Ampere's Law
 
   curl_B = -Bx[i][j][k] + Bx[i][j][k+1] + Bz[i][j][k] - Bz[i+1][j][k];
-  Ey[i][j][k] = Ey[i][j][k] + dt * (c1 * c1 * curl_B - c2 * jy[i][j]\[k]);
+  Ey[i][j][k] = Ey[i][j][k] + dt * (c1 * c1 * curl_B / dr - c2 * jy[i][j]\[k]);
 
   curl_B = Bx[i][j][k] - Bx[i][j+1][k] - By[i][j][k] + By[i+1][j][k];
-  Ez[i][j][k] = Ez[i][j][k] + dt * (c1 * c1 * curl_B - c2 * jz[i][j][k]);
+  Ez[i][j][k] = Ez[i][j][k] + dt * (c1 * c1 * curl_B / dr - c2 * jz[i][j][k]);
 
   }
   }
@@ -131,13 +131,13 @@ for (j = 1; j < N; j++) {
 for (k = 1; k < N; k++) {
 
 curl_E = Ey[i][j][k-1] - Ey[i][j][k] + Ez[i][j][k] - Ez[i][j-1][k];
-Bx[i][j][k] = Bx[i][j][k] - curl_E * dt;                                      // ~ Faraday's Law
+Bx[i][j][k] = Bx[i][j][k] - curl_E / dr * dt;                                      // ~ Faraday's Law
 
 curl_E = Ex[i][j][k] - Ex[i][j][k-1] - Ez[i][j][k] + Ez[i-1][j][k];
-By[i][j][k] = By[i][j][k] - curl_E * dt;
+By[i][j][k] = By[i][j][k] - curl_E / dr * dt;
 
 curl_E = -Ex[i][j][k] + Ex[i][j-1][k] + Ey[i][j][k] - Ey[i-1][j][k];
-Bz[i][j][k] = Bz[i][j][k] - curl_E * dt;
+Bz[i][j][k] = Bz[i][j][k] - curl_E / dr * dt;
 
 }
 }
