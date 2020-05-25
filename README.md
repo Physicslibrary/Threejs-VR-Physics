@@ -168,6 +168,11 @@ P.B. Visscher, "Discrete formulation of Maxwell equations", Computers In Physics
 
 Harvey Gould and Jan Tobochnik, An Introduction to Computer Simulation Methods, Addison-Wesley (1996).
 
+The third edition of "An Introduction to Computer Simulation Methods" is available on:
+
+https://www.compadre.org/osp/document/ServeFile.cfm?ID=7375&DocID=527&Attachment=1
+
 [https://threejs.org/](https://threejs.org/)
+
 
 <br>Copyright (c) 2020 Hartwell Fong
