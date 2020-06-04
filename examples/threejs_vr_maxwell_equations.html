@@ -181,10 +181,10 @@ for(i=0;i<N;i++){
 	document.body.appendChild(VRButton.createButton(renderer));
 	renderer.xr.enabled = true;
 
-	controller = renderer.xr.getController(0); // right hand controller
+	controller = renderer.xr.getController(1); // right hand controller
 	scene.add(controller);
 
-	controller2 = renderer.xr.getController(1); // left hand controller
+	controller2 = renderer.xr.getController(0); // left hand controller
 	scene.add(controller2);
 
 	var box = new THREE.BoxBufferGeometry(0.05,0.05,0.05);
