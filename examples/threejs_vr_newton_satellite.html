@@ -92,13 +92,13 @@ function init() {
 
 	camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.1, 100);
 
-// add a floor
+// Add a floor
 
 	var color = new THREE.Color(0x8ec683);
 	var floor = new THREE.GridHelper(8,8,color,color);
 	scene.add(floor);
 
-	renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.WebGLRenderer({antialias: true});
 	renderer.setPixelRatio(window.devicePixelRatio );
 	renderer.setSize(window.innerWidth, window.innerHeight);	
 	document.body.appendChild(renderer.domElement);
