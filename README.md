@@ -204,6 +204,8 @@ var dt = 0.01;    // time step
 
 Open Oculus Browser to link (and "Enter VR"):<br>
 
+[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_newton_satellite.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_newton_satellite.html)
+
 ## References
 
 Pieter B. Visscher, Fields and Electrodynamics, John Wiley & Sons (1988).
