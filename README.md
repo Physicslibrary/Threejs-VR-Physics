@@ -16,7 +16,7 @@ The two green wireframe boxes on the lower right are Touch controllers. For "Mas
 they do not do anything except to help see hands in VR. The green box on the left is the mass
 at x = -0.5m with an arrow showing the force of the spring on the mass as a function of position.
 
-Mass on a spring is solved using Euler method.<br>
+Mass on a spring is solved using Euler leapfrog method.<br>
 
 <pre>
 
@@ -160,6 +160,50 @@ To exit simulation, press left Touch controller menu button.
 There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of the
 finite 16x16x16 computational space, they will reflect (energy conservation). Code resets E, B, j, and rho to zero after computing the four fields 2000 times. This is a balance between the refresh rate of Oculus Quest and the amount of floating points the browser computes between frames.
 
+## 3. Newton's Satellite Motion (updating)
+
+Satellite motion is simulated using Euler leapfrog method.<br>
+
+<pre>
+
+a = F/m                       (Newton's second law of motion) (3.1)
+
+F = - G * M * m * r/r^3       (Newton's law universal law of gravitation) (3.2)
+
+Scale units to make GM = 1.   (Using Computers in Physics)
+
+F = - m * r/r^3               (3.3)
+
+a = - r/r^3                   (3.1 = 3.3)
+
+dv/dt = - r/r^3               (aceleration = dv/dt, change in velocity with time) (3.4)
+
+v = dx/dt                     (velocity = dx/dt, change in distance with time) (3.5)
+
+Equations 3.1 and 3.2 are usually solved using calculus. Since a web browser can multiply and add
+floating points very fast, make 3.4 and 3.5 finite-difference equations:
+
+(vnew - vold)/dt = - r/r^3             (from 3.4)
+
+vnew = vold + (-r/r^3) * dt            (3.6)
+
+vnew = (xnew - xold) / dt              (from 3.5)
+
+xnew = xold + vnew * dt                (3.7)
+
+Put 3.6 and 3.7 into javascript with initial conditions:
+
+var x = -1;       // position x and y
+var y = 0;
+
+var vx = 0;       // velocity vx and vy
+var vy = 1.1;
+var dt = 0.01;    // time step
+
+</pre>
+
+Open Oculus Browser to link (and "Enter VR"):<br>
+
 ## References
 
 Pieter B. Visscher, Fields and Electrodynamics, John Wiley & Sons (1988).
@@ -171,6 +215,8 @@ Harvey Gould and Jan Tobochnik, An Introduction to Computer Simulation Methods, 
 The third edition of "An Introduction to Computer Simulation Methods" is available on:
 
 https://www.compadre.org/osp/document/ServeFile.cfm?ID=7375&DocID=527&Attachment=1
+
+John R. Merrill, Using Computers in Physics, University Press of America (1976).
 
 [https://threejs.org/](https://threejs.org/)
 
