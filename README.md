@@ -160,7 +160,7 @@ To exit simulation, press left Touch controller menu button.
 There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of the
 finite 16x16x16 computational space, they will reflect (energy conservation). Code resets E, B, j, and rho to zero after computing the four fields 2000 times. This is a balance between the refresh rate of Oculus Quest and the amount of floating points the browser computes between frames.
 
-## 3. Newton's Satellite Motion (updating)
+## 3. Newton's Satellite (updating)
 
 Satellite motion is simulated using Euler leapfrog method.<br>
 
