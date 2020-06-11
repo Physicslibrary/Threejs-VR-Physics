@@ -164,6 +164,8 @@ finite 16x16x16 computational space, they will reflect (energy conservation). Co
 
 Satellite motion is simulated using Euler leapfrog method.<br>
 
+<img src="images/3-satellite.gif" width="320">
+
 <pre>
 
 a = F/m                       (Newton's second law of motion) (3.1)
