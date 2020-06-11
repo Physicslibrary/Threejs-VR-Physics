@@ -6,15 +6,15 @@
 
 Oculus Quest recommended (6DoF headset/controllers).<br>
 
-Oculus Browser (tested Quest Update >16.0 and three.js r115).<br>
+Oculus Browser (tested Quest Update >17.0 and three.js r115).<br>
 
 ## 1. Mass on a Spring.
 
-<img src="images/1.png" width="320">
+<img src="images/1-mass_on_a_spring.gif" width="320">
 
-The two green wireframe boxes on the lower right are Touch controllers. For "Mass on a spring",
-they do not do anything except to help see hands in VR. The green box on the left is the mass
-at x = -0.5m with an arrow showing the force of the spring on the mass as a function of position.
+Two green boxes on the bottom are Touch controllers. For "Mass on a spring",
+they do not do anything except to help see hands in VR. The oscillating green box at initial x = -0.5m 
+with an arrow showing the force of the spring on the mass as a function of position.
 
 Mass on a spring is solved using Euler leapfrog method.<br>
 
