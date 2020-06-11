@@ -12,7 +12,7 @@ Oculus Browser (tested Quest Update >17.0 and three.js r115).<br>
 
 <img src="images/1-mass_on_a_spring.gif" width="320">
 
-Two green boxes on the bottom are Touch controllers. For "Mass on a spring",
+Two green boxes on the bottom are Touch controllers. For "Mass on a Spring",
 they do not do anything except to help see hands in VR. The oscillating green box at initial x = -0.5m 
 with an arrow showing the force of the spring on the mass as a function of position.
 
