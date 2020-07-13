@@ -67,6 +67,10 @@ All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and t
 
 [https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
 
+(Testing threejs AR on 2018 9.7" iPad with Mozilla XR Viewer)
+
+[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_mass_on_a_spring.html)
+
 ## 2. Maxwell Equations.
 
 <img src="images/maxwell1.gif" width="320">
