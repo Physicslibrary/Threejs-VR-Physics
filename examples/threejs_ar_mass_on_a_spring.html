@@ -95,7 +95,7 @@ function init() {
 		new BoxLineGeometry(1, 1, 1, 10, 10, 10),
 		new THREE.LineBasicMaterial({color: 0x808080})
  		);
-	room.geometry.translate(0,1,-0.5);
+	room.geometry.translate(0,0,-0.5);
 	scene.add(room);
 
 	renderer = new THREE.WebGLRenderer({antialias: true});
@@ -141,7 +141,7 @@ function render() {
 		vnew = vold + 1/mass*(-k*xold)*dt;
 		xnew = xold + vnew*dt;
 		mass_geometry.position.x = xnew;
-		mass_geometry.position.y = 1;
+		mass_geometry.position.y = 0;
 		xold = xnew;
 		vold = vnew;
 
