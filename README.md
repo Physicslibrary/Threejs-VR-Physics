@@ -212,6 +212,11 @@ Open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_newton_satellite.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_newton_satellite.html)
 
+(Testing threejs AR on 2018 9.7" iPad with Mozilla XR Viewer)
+
+[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_newton_satellite.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_newton_satellite.html)
+
+
 ## References
 
 Pieter B. Visscher, Fields and Electrodynamics, John Wiley & Sons (1988).
