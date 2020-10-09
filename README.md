@@ -6,7 +6,7 @@
 
 Oculus Quest recommended (6DoF headset/controllers).<br>
 
-Oculus Browser (tested Quest Update >17.0 and three.js r115).<br>
+Oculus Browser (tested Quest Update >17.0 and three.js r118).<br>
 
 ## 1. Mass on a Spring.
 
