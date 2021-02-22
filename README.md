@@ -4,16 +4,17 @@
 
 ## System Requirements
 
-Oculus Quest recommended (6DoF headset/controllers).<br>
-
-Oculus Browser (tested Quest Update >17.0 and three.js r118).<br>
+System requirements<br>
+Oculus Quest (update >25.0, controllers optional)<br>
+Oculus Browser (update >14.0, track controllers or hands (not digits), Oculus' index-finger-thumb pinch gesture to exit)<br>
+Three.js (r125, don't need to be installed, a subset built into this webpage)<br>
 
 ## 1. Mass on a Spring.
 
 <img src="images/1-mass_on_a_spring.gif" width="320">
 
-Two green boxes on the bottom are Touch controllers. For "Mass on a Spring",
-they do not do anything except to help see hands in VR. The oscillating green box at initial x = -0.5m 
+Two green boxes on the bottom are Touch controllers or hands. For "Mass on a Spring",
+they do not do anything except to see hands in VR. The oscillating green box at initial x = -0.5m 
 with an arrow showing the force of the spring on the mass as a function of position.
 
 Mass on a spring is solved using Euler leapfrog method.<br>
@@ -59,17 +60,13 @@ With an Oculus Quest, open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_mass_on_a_spring.html)
 
-To exit simulation, press left Touch controller menu button.
+To exit simulation, press left Touch controller menu button (or Oculus' gesture index-finger-thumb pinch to exit).
 
-Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r115 (three.module.js, VRButton.js, and BoxLineGeometry.js). Complete three.js is available from threejs website.
+Code webxr_vr_mass_on_a_spring.html uses a subset of three.js r125 (three.module.js, /examples/jsm/webxr/*). Complete three.js is available from threejs website.
 
-All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and tested with Oculus Quest. There is a short tutorial on writing three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P":
+All codes in Threejs-VR-Physics are developed on a Raspberry Pi 3 Model B+ and tested with Oculus Quest. There is a section about coding three.js codes on a Raspberry Pi in "Making Threejs-WebXR-67P":
 
 [https://github.com/Physicslibrary/Threejs-WebXR-67P](https://github.com/Physicslibrary/Threejs-WebXR-67P)
-
-(Testing threejs AR on 2018 9.7" iPad with Mozilla XR Viewer)
-
-[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_mass_on_a_spring.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_mass_on_a_spring.html)
 
 ## 2. Maxwell Equations.
 
@@ -159,7 +156,7 @@ Right controller above Yee cells is jx = 0 to stop separating charges.
 
 Right controller near floor (0.2m) resets simulation.
 
-To exit simulation, press left Touch controller menu button.
+To exit simulation, press left Touch controller menu button or index-finger-thumb pinch.
 
 There is no absorbing boundary for this first simulation. When changing E and B fields reach the boundary of the
 finite 16x16x16 computational space, they will reflect (energy conservation). Code resets E, B, j, and rho to zero after computing the four fields 2000 times. This is a balance between the refresh rate of Oculus Quest and the amount of floating points the browser computes between frames.
@@ -211,11 +208,6 @@ var dt = 0.01;    // time step
 Open Oculus Browser to link (and "Enter VR"):<br>
 
 [https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_newton_satellite.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_vr_newton_satellite.html)
-
-(Testing threejs AR on 2018 9.7" iPad with Mozilla XR Viewer)
-
-[https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_newton_satellite.html](https://physicslibrary.github.io/Threejs-VR-Physics/examples/threejs_ar_newton_satellite.html)
-
 
 ## References
 
