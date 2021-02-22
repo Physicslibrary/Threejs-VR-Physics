@@ -6,7 +6,7 @@
 
 System requirements<br>
 Oculus Quest (update >25.0, controllers optional)<br>
-Oculus Browser (update >14.0, track controllers or hands (not digits), Oculus' index-finger-thumb pinch gesture to exit)<br>
+Oculus Browser (update >14.0, track controllers or hands, not digits, Oculus' index-finger-thumb pinch gesture to exit)<br>
 Three.js (r125, don't need to be installed, a subset built into this webpage)<br>
 
 ## 1. Mass on a Spring.
