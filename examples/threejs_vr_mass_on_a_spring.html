@@ -61,7 +61,6 @@ https://threejs.org/
 	<script type="module">
 
 import * as THREE from '../build/three.module.js';
-//import { BoxLineGeometry } from './jsm/geometries/BoxLineGeometry.js';
 import { VRButton } from './jsm/webxr/VRButton.js';
 
 var camera, scene, renderer;
@@ -100,13 +99,6 @@ function init() {
 	var color = new THREE.Color(0x8ec683);
 	var floor = new THREE.GridHelper(8,8,color,color);
 	scene.add(floor);
-
-//	room = new THREE.LineSegments(
-//		new BoxLineGeometry(1, 1, 1, 10, 10, 10),
-//		new THREE.LineBasicMaterial({color: 0x808080})
- //		);
-//	room.geometry.translate(0,1,-0.5);
-//	scene.add(room);
 
 	renderer = new THREE.WebGLRenderer({antialias: true});
 	renderer.setPixelRatio(window.devicePixelRatio );
