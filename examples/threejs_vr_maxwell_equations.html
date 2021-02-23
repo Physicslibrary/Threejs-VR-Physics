@@ -64,50 +64,50 @@ https://threejs.org/
 import * as THREE from '../build/three.module.js';
 import { VRButton } from './jsm/webxr/VRButton.js';
 
-let camera, scene, renderer;
-let controller;
-let controller2;
-let controller_box;
-let controller_box2;
+var camera, scene, renderer;
+var controller;
+var controller2;
+var controller_box;
+var controller_box2;
 
-let i,j,k;
+var i,j,k;
 
-let N = 16;		    // size of grid to compute E, B, j, and rho
+var N = 16;		    // size of grid to compute E, B, j, and rho
 
-let jx = [];		    // current density
-let jy = [];
-let jz = [];
+var jx = [];		    // current density
+var jy = [];
+var jz = [];
 
-let Ex = [];		    // electric field
-let Ey = [];
-let Ez = [];
+var Ex = [];		    // electric field
+var Ey = [];
+var Ez = [];
 
-let Bx = [];		    // magnetic field
-let By = [];
-let Bz = [];
+var Bx = [];		    // magnetic field
+var By = [];
+var Bz = [];
 
-let rho = [];		    // charge density
+var rho = [];		    // charge density
 
-let curl_B = 0.0;   	    // variable to hold the curl of B
+var curl_B = 0.0;   	    // variable to hold the curl of B
 
-let curl_E = 0.0;   	    // variable to hold the curl of E
+var curl_E = 0.0;   	    // variable to hold the curl of E
 
 const dt = 1.0;       	    // time step (nanosecond,ns)
 const dr = 1.0;		    // space step (meter,m)
 const c1 = 0.09;	    // speed of light squared m^2/(ns)^2
 const c2 = 0.11;	    // 1/(permittivity of space) Nm^2/(uc^2) where N=Newton, uc=microcoulomb
 
-let Exfield = [];
-let Byfield = [];
-let By2field = [];
-let Bzfield = [];
-let Bz2field = [];
+var Exfield = [];
+var Byfield = [];
+var By2field = [];
+var Bzfield = [];
+var Bz2field = [];
 
-let resetEBj = 0;	    // iterate 2000 loops, then reset (no absorbing boundary yet)
+var resetEBj = 0;	    // iterate 2000 loops, then reset (no absorbing boundary yet)
 
-let positive, negative;
+var positive, negative;
 
-let wait = 0;
+var wait = 0;
 
 init();
 animate();
